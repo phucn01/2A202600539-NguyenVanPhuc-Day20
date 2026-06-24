@@ -24,6 +24,8 @@ class ResearchState(BaseModel):
 
     agent_results: list[AgentResult] = Field(default_factory=list)
     trace: list[dict[str, Any]] = Field(default_factory=list)
+    trace_url: str | None = None
+    trace_id: str | None = None
     errors: list[str] = Field(default_factory=list)
 
     def record_route(self, route: str) -> None:
